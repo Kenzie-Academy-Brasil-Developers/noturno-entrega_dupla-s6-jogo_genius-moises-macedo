@@ -1,0 +1,144 @@
+:root{
+    --fonte-titulo: 'DotGothic16', sans-serif;
+    --fonte-corpo: 'PT Serif', serif;
+
+    --cor-game-verde:#05c46b;
+    --cor-game-vermelho:#ff3f34;
+    --cor-game-amarelho:#ffd32a;
+    --cor-game-azul: #3c40c6;
+    --cor-borda:#1e272e;
+
+    --cor-background-one:#0be881;
+    --cor-background-two:#d2dae2;
+    --cor-background-three:#485460;
+    --cor-background-four:#34e7e4;
+
+
+
+
+}
+
+.main--title{
+
+    font-family: var(--fonte-titulo);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.main--container{
+    display: flex;
+    
+    height: 500px;
+    width: 100%;
+    max-width: 330px;
+    align-items: center;
+    justify-content: center;
+    margin: auto ;
+
+    /*borda*/
+
+    border: 8px solid var(--cor-borda);    
+    border-radius: 10px;
+    box-shadow: -40px 52px 95px -34px rgba(0,0,0,0.55);
+    -webkit-box-shadow: -40px 52px 95px -34px rgba(0,0,0,0.55);
+    -moz-box-shadow: -40px 52px 95px -34px rgba(0,0,0,0.55);
+
+    /*background*/
+
+    background: linear-gradient(45deg,var(--cor-background-one),var(--cor-background-two),var(--cor-background-three),var(--cor-background-four));
+    background-size: 300% 300%;
+    animation: colors 15s ease infinite;
+    
+    
+
+
+}
+
+/*ANIMAÇÃO BACKGROUND CARD*/
+
+@keyframes colors{
+
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+
+
+
+
+
+
+/*CARDS GAME*/
+
+.main--game{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 310px;
+   
+}
+
+
+
+.card-game{
+    border: 2px solid black;
+    width: 100%;
+    max-width: 130px;
+    height: 100%;
+    height: 130px;
+
+}
+
+.main--top-left{
+    background-color: var(--cor-game-verde);
+    border-top-left-radius: 100% ;
+    opacity: 0.7;
+
+}
+
+.main--top-left:hover{
+    opacity: 1;
+}
+
+.main--top-rigth{
+    background-color: var(--cor-game-vermelho);
+    border-top-right-radius: 100%;
+    opacity: 0.7;
+}
+.main--top-rigth:hover{
+    opacity: 1;
+}
+
+.main--bottom-left{
+    background-color: var(--cor-game-amarelho);
+    border-bottom-left-radius: 100%;
+    opacity: 0.7;
+}
+.main--bottom-left:hover{
+    opacity: 1;
+
+}
+
+.main--bottom-rigth{
+    background-color: var(--cor-game-azul);
+    border-bottom-right-radius: 100%;
+    opacity: 0.7;
+
+}
+.main--bottom-rigth:hover{
+    opacity: 1;
+
+}
