@@ -22,18 +22,19 @@
     </header>
     <div class="container--modal">
         <div class="modal--header">
-            <p class="modal--header-texto"> Insira o nome do Jogador</p>
+            <p class="modal--header-texto"> Insira o nome do Jogador</p>         
             <span class="modal--header-fechar fechar">x</span>
         </div>
+        <p class="modal--header-vazio">Informe um nome</p>
         <div class="modal--form">
             <label class="modal--label">Nome:</label>        
-            <input type="text" class="modal--input">            
+            <input type="text" class="modal--input" required>            
         </div>
         <p class="modal--container-button">
-            <button type="submit" class="modal--button fechar">Enviar</button>
+            <button type="reset" class="modal--button fechar">Enviar</button>
         </p>        
     </div>
-    
+    <div class="mask"></div>
     
     <main class="main--container">
         <div class="main--container-player">
@@ -42,7 +43,6 @@
                 <p class="main--player-counter">1</p>
             </div> 
         </div>
-        
         <section class="main--game">            
             <div class="main--top-left card-game">
             </div>
