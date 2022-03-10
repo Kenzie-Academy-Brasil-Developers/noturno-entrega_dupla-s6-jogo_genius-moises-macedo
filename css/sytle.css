@@ -188,6 +188,7 @@
    
   
   .main--neon-bt:hover {
+    
   
     background: var(--cor-borda);
 
@@ -481,17 +482,23 @@
 .container--modal{
 
   width: 300px;
-  height: 150px;
+  height: 160px;
   
 
   border-radius: 15px;
 
   position: absolute;
-  top:26%;
-  left:15%;
+
+  top: 7vw;
+  left:50vh;
+  
+  
+  
 
   border: 2px solid black;
-  background-color: #F4FCD9;
+  background: linear-gradient(45deg,#7f8fa6,#85F4FF,#79B4B7);
+  background-size: 300% 300%;
+  animation: colors 15s ease infinite;
 
   box-shadow: 4px 10px 67px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 4px 10px 67px 0px rgba(0,0,0,0.75);
@@ -500,15 +507,18 @@
   
 
   opacity: 0;
-  transition: all 200ms ease-out;
+  transition: all 300ms ease-out;  
+  transform: translateY(-25%);
+  z-index: 10;
 
 
 }
 
 .container--modal-opacity{
 
-  opacity: 1;
+  opacity: 1;  
   transform: translateY(-50%);
+  
 }
 
 /*HEADER MODAL*/
@@ -518,9 +528,9 @@
 
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around;  
   margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
 }
 
@@ -532,6 +542,19 @@
   
 }
 
+.modal--header-vazio{
+  
+  color: red;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-family: var(--fonte-corpo);
+  margin-bottom: 10px;
+  display: none;
+  
+
+}
+
 .modal--header-fechar{
 
   width: 5%;
@@ -541,8 +564,10 @@
   font-size: 0.7rem;
   cursor: pointer;
 
-  border: 1px solid #F4FCD9;;
-  background-color: #DADBBD;
+  
+  
+  background-size: 300% 300%;
+  animation: colors 15s ease infinite;
 
   border-radius: 50%;
 }
@@ -562,9 +587,12 @@
   height: 30px;
   padding-left: 10px;
   font-size: 1.2rem;
-  background-color: #F4FCD9;
+
+  
+  
 
 }
+/*BUTTON MODAL*/
 
 .modal--container-button{
   text-align: center;
@@ -579,16 +607,47 @@
   margin-top: 10px;
   width: 50%;
   height: 25px;
+  border-radius: 10px ;
 
   background-color: #74959A;
   color: #fff;
   cursor: pointer;
 
+  transition:  background 0.3s;
+
 }
 .modal--button:hover{
 
-  background-color: #F4FCD9;
+  
   color: #0c0c0c;
+  transition:  background 0.3s
+
+}
+.modal--button:active{
+  
+  color: #fff;;
+  
+}
+
+.mask{
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0;
+  pointer-events: none;
+  transition:  opacity 0.3s
+}
+
+.container--modal.container--modal-opacity~.mask{
+  pointer-events: initial;
+  opacity: 0.5;
+  transition:  opacity 0.3s
+
+
+
 
 }
 

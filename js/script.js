@@ -20,36 +20,79 @@ genius.buttonIniciar.addEventListener('click', function (){
 
 })
 
-//----------------FECHANDO MODAL----------------//
+//----------------FECHANDO MODAL (click)----------------//
 
 const fecharModal = document.querySelectorAll('.fechar');
 
 
-const fechandoModal = () => {
+const fechandoModal = (e) => {
 
     containerModal.classList.remove('container--modal-opacity')
 }
 
 fecharModal.forEach(fecha => fecha.addEventListener('click',fechandoModal));
 
+//----------------FECHANDO MODAL (Enter)----------------//
+
+
+
+document.addEventListener("keypress", function(e) {
+    if(e.key === 'Enter') {
+    
+        const btn = document.querySelector(".modal--input");        
+        valoresInput(fechandoModal(btn))
+      
+      
+    
+    }
+  });
+
+
+
 //----------------Pegando valores Modal----------------//
 
 
 
-const valoresInput = () => {
+const valoresInput = (e) => {
 
     let nomeJogador = document.querySelector('.main--player-name');
-    const  inputModal = document.querySelector('.modal--input').value;  
+    let  inputModal = document.querySelector('.modal--input').value; 
+    
+    
 
-    nomeJogador.innerHTML = inputModal   
+
+    nomeJogador.innerHTML = inputUpperCase(inputModal)
     
 }
+
 
 
 const buttonSumitModal = document.querySelector('.modal--button');
 buttonSumitModal.addEventListener('click',valoresInput)
 
-console.log(getComputedStyle(buttonSumitModal).backgroundColor)
+//----------------tratando texto Input----------------//
+
+const inputUpperCase = (e) => {
+
+    let letter = e.split('')
+
+    let arr = [];
+
+    for(let contador =0; contador <letter.length; contador ++){
+        let index = letter[contador]
+
+        if(index === letter[0]){
+
+            arr.push(index.toUpperCase())
+
+        }
+        else arr.push(index)
+        
+    }
+
+    return arr.join('')
+  
+}
 
 
 
@@ -59,14 +102,13 @@ document.addEventListener('click', function(e){
 
     const el = e.target;
 
-    if(el === genius.buttonIniciar) {
-
-        document.querySelector('.main--container-level').style.display = 'block'
-    }
+    
     if(el === genius.displayComputador){
 
-        console.log('clicado')
+        console.log('clique')
 
+
+        
 
 
     }
@@ -75,6 +117,8 @@ document.addEventListener('click', function(e){
 })
 
 //----------------SEQUENCIA DE CORES----------------//
+
+
 
 
 
