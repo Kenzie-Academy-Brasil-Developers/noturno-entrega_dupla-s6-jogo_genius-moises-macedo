@@ -131,16 +131,18 @@ botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
 //----------------SEQUENCIA DE CORES----------------//
 const cores = ['verde', 'vermelho', 'azul', 'amarelo']
-let sequenciaMaquina = ['verde', 'vermelho', 'azul', 'amarelo']
+let sequenciaMaquina = ['verde', 'azul','vermelho', 'amarelo']
 let sequenciaJogador = []
 
 
 function addCores(){
 let random = Math.floor(Math.random()*cores.length)
 sequenciaMaquina.push(cores[random])
+
+
 }
 
-
+0
 
 
 
@@ -158,28 +160,23 @@ function piscar(){
 
         if(sequenciaMaquina[i].includes('verde')){
             botaoVerde.classList.add('cardPiscandoVerde')
-            setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
+            setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000*i)
         }
 
-        else if(sequenciaMaquina[i].includes('vermelho')){
-            setTimeout(() => {  botaoVermelho.classList.add('cardPiscandoVermelho')
-            setTimeout(function () {botaoVermelho.classList.remove('cardPiscandoVermelho')}, 1000)
-         }, 1000)
-            
-        }
+        setTimeout(() => {  if(sequenciaMaquina[i].includes('vermelho')){
+            botaoVermelho.classList.add('cardPiscandoVermelho')
+             setTimeout(function () {botaoVermelho.classList.remove('cardPiscandoVermelho')}, 1000)
+         }}, 1000*i)
         
-        else if(sequenciaMaquina[i].includes('azul')){
-            setTimeout(() => {  botaoAzul.classList.add('cardPiscandoAzul')
-            setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 1000)
-         }, 2000)
+        setTimeout(() => {  if(sequenciaMaquina[i].includes('azul')){
+            botaoAzul.classList.add('cardPiscandoAzul')
+             setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 1000)
+         }}, 1000*i)
             
-        }
-        else if(sequenciaMaquina[i].includes('amarelo')){
-            setTimeout(() => { botaoAmarelo.classList.add('cardPiscandoAmarelo')
-            setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 1000)
-         }, 3000)
-            
-        }
+        setTimeout(() => {  if(sequenciaMaquina[i].includes('amarelo')){
+            botaoAmarelo.classList.add('cardPiscandoAmarelo')
+             setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 1000)
+         }}, 1000*i)
     }
 }
 
@@ -220,19 +217,6 @@ function iniciar(){
     // resposta usuário
     setTimeout(verificar, 10000)
     sequenciaJogador = []
-
-    // for(let i = 0; (sequenciaJogador === sequenciaMaquina) == true; i++) {
-
-    //     if(sequenciaJogador === sequenciaMaquina){
-    //         console.log('Voce acertou!')
-    //         addCores()
-    //         piscar()
-    //     }else{
-    //         console.log('Errou!')
-    //     }
-    // } 
-
-    
 }
 
 
