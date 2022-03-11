@@ -239,4 +239,7 @@ function iniciar(){
 botaoEnviar.addEventListener('click', iniciar)
 
 
+let botaoProxima = document.getElementsByClassName('button-next')
+botaoProxima.addEventListener('click', iniciar)
+
 // let botaoTeste = document.getElementById('teste')
