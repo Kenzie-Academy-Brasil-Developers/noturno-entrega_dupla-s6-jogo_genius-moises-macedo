@@ -25,8 +25,8 @@
 
     font-family: var(--fonte-titulo);
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -499,6 +499,7 @@
     max-width: 120px;
     height: 120px;
     background-color: aliceblue;
+    display: flex;
 
     border: 3px solid black;
     
@@ -514,11 +515,12 @@
 }
 
 .main--center-information{
-    position: absolute;  
-    top:15px;
-    left:35px;
-
-    font-size: 1.2rem;
+  
+  
+  position: absolute;  
+  top:40px;
+  left:30px;
+  font-size: 1.2rem;
 
 }
 
@@ -706,6 +708,12 @@
   display: none;
 
   
+}
+
+footer{
+  margin-top: 10px;
+  text-align: center;
+
 }
 
 

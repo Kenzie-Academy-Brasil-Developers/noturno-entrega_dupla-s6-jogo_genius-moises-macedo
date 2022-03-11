@@ -3,11 +3,13 @@
 const genius = {
 
     nomeJogador: document.querySelector('.main--player-name'),
-    nivelJogador: document.querySelector('.main--player-counter'),
+    nivelJogador: document.querySelector('.main--container-level'),
     displayComputador: document.querySelector('.card-game'),
     infoCentral: document.querySelector('.main--centerr-information'),
     buttonIniciar: document.querySelector('.button-start')
 }
+
+
 
 
 //----------------TRABALHANDO MODAL----------------//
@@ -212,8 +214,11 @@ let nivel = 0
 
 function verificar(){
 if(equals(sequenciaJogador,sequenciaMaquina) === true){
-    displayCentro.innerText = "Você acertou!"
+    genius.nivelJogador.style.display= 'block'
+    displayCentro.innerText = "Acertou!"
     nivel++
+
+
     displayNivel.innerText = nivel
     
 }else{
@@ -239,7 +244,16 @@ function iniciar(){
 botaoEnviar.addEventListener('click', iniciar)
 
 
-let botaoProxima = document.getElementsByClassName('button-next')
-botaoProxima.addEventListener('click', iniciar)
+let botaoProxima = document.querySelector('.button-next')
+botaoProxima.addEventListener('click', function(){
+
+    displayCentro.innerText = "Observe";
+
+    iniciar();
+    
+
+
+
+})
 
 // let botaoTeste = document.getElementById('teste')
