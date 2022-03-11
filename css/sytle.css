@@ -97,7 +97,6 @@
 }
 
 
-
 .card-game{
     border: 5px solid black;
     width: 100%;
@@ -121,6 +120,16 @@
     -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
 }
 
+.cardPiscandoVerde{
+  background-color: var(--cor-game-verde);
+    border-top-right-radius: 100%;
+    opacity: 1;
+    cursor: pointer;   
+    box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+    -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+    -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+}
+
 .main--top-rigth{
     background-color: var(--cor-game-vermelho);
     border-top-right-radius: 100%;
@@ -134,19 +143,16 @@
     -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
 }
 
-.main--bottom-left{
-    background-color: var(--cor-game-amarelho);
-    border-bottom-left-radius: 100%;
-    opacity: 0.6;
-    cursor: pointer;    
-}
-.main--bottom-left:hover{
+.cardPiscandoVermelho{
+  background-color: var(--cor-game-vermelho);
+    border-top-right-radius: 100%;
     opacity: 1;
+    cursor: pointer;   
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
     -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
     -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-
 }
+
 
 .main--bottom-rigth{
     background-color: var(--cor-game-azul);
@@ -160,7 +166,40 @@
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
     -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
     -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+}
 
+.cardPiscandoAzul{
+  background-color: var(--cor-game-Azul);
+    border-top-right-radius: 100%;
+    opacity: 1;
+    cursor: pointer;   
+    box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+    -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+    -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+}
+
+.main--bottom-left{
+  background-color: var(--cor-game-amarelho);
+  border-bottom-left-radius: 100%;
+  opacity: 0.6;
+  cursor: pointer;    
+}
+.main--bottom-left:hover{
+  opacity: 1;
+  box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+
+}
+
+.cardPiscandoAmarelo{
+  background-color: var(--cor-game-amarelho);
+    border-top-right-radius: 100%;
+    opacity: 1;
+    cursor: pointer;   
+    box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+    -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+    -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
 }
 
 

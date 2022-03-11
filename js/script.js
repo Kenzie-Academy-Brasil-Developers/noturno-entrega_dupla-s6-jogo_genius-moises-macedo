@@ -116,45 +116,7 @@ document.addEventListener('click', function(e){
 
 })
 
-//----------------SEQUENCIA DE CORES----------------//
-const cores = ['verde', 'vermelho', 'azul', 'amarelo']
-let sequenciaMaquina = []
-let sequenciaJogador = []
-
-
-function addCores(){
-let random = Math.floor(Math.random()*cores.length)
-sequenciaMaquina.push(cores[random])
-}
-
-
-function addCoresJogadorVerde(){
-    sequenciaJogador.push('verde')
-}
-
-function addCoresJogadorVermelho(){
-    sequenciaJogador.push('vermelho')
-}
-
-function addCoresJogadorAzul(){
-    sequenciaJogador.push('azul')
-}
-
-function addCoresJogadorAmarelo(){
-    sequenciaJogador.push('amarelo')
-}
-
-////LOGICA JOGO////
-
-function iniciar(){
-    addCores()
-
-}
-
-
-
-
-///capturando botoes///
+///capturando botoes e add event listener///
 let botaoVerde = document.getElementById('verde')
 botaoVerde.addEventListener('click', addCoresJogadorVerde)
 
@@ -167,8 +129,86 @@ botaoAzul.addEventListener('click', addCoresJogadorAzul)
 let botaoAmarelo = document.getElementById('amarelo')
 botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
-let botaoIniciar = document.getElementById('iniciar')
-botaoIniciar.addEventListener('click',///INICIAR///)
+//----------------SEQUENCIA DE CORES----------------//
+const cores = ['verde', 'vermelho', 'azul', 'amarelo']
+let sequenciaMaquina = ['verde']
+let sequenciaJogador = []
+
+
+function addCores(){
+let random = Math.floor(Math.random()*cores.length)
+sequenciaMaquina.push(cores[random])
+}
+
+
+
+////LOGICA JOGO////
+
+function iniciar(){
+    addCores()
+
+}
+
+///verifica qual luz deve piscar
+function piscar(){
+    for(let i = 0; i<sequenciaMaquina.length; i++){
+        if(sequenciaMaquina[i].includes('verde')){
+            setInterval(function () {botaoVerde.add.classList('cardPiscandoVerde')}, 700)
+            // botaoVerde.remove.classList('cardPiscandoVerde')
+        }
+        else if(sequenciaMaquina[i].includes('vermelho')){
+            setInterval(function () {botaoVermelho.add.classList(cardPiscandoVermelho)}, 700)
+            botaoVermelho.remove.classList(cardPiscandoVermelho)
+        }
+        else if(sequenciaMaquina[i].includes('azul')){
+            setInterval(function () {botaoAzul.add.classList(cardPiscandoAzul)}, 700)
+            botaoAzul.remove.classList(cardPiscandoAzul)
+        }
+        else if(sequenciaMaquina[i].includes('amarelo')){
+            setInterval(function () {botaoAmarelo.add.classList(cardPiscandoAmarelo)}, 700)
+            botaoAmarelo.remove.classList(cardPiscandoAmarelo)
+        }
+    }
+}
+
+
+
+
+///add ao array do jogador
+function addCoresJogadorVerde(){
+    sequenciaJogador.push('verde')
+}
+
+function addCoresJogadorVermelho(){
+    sequenciaJogador.push('vermelho')
+}
+
+function addCoresJogadorAzul(){
+    sequenciaJogador.push('azul')
+
+}
+
+function addCoresJogadorAmarelo(){
+    sequenciaJogador.push('amarelo')
+}
+
+
+///verifica os arrays///
+function verificar(){
+if(sequenciaJogador === sequenciaMaquina){
+    console.log('Voce acertou!')
+}else{
+    console.log('Errou!')
+}
+
+}
+
+
+
+
+// let botaoIniciar = document.getElementById('iniciar')
+// botaoIniciar.addEventListener('click', ) 
+
 
 
 
@@ -180,8 +220,4 @@ botaoIniciar.addEventListener('click',///INICIAR///)
 
 //     let contadora = 0;
 
-//     genius.nivelJogador = contadora;
-
-
-
-// }
+//     genius.nivelJogador = contadora;}
