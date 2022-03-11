@@ -251,9 +251,6 @@ botaoProxima.addEventListener('click', function(){
 
     iniciar();
     
-
-
-
 })
 
 // let botaoTeste = document.getElementById('teste')
