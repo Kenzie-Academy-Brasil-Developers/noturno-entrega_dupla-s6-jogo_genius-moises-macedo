@@ -113,12 +113,12 @@
     cursor: pointer;    
 }
 
-.main--top-left:hover{
+/* .main--top-left:hover{
     opacity: 1;
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
     -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
     -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-}
+} */
 
 .cardPiscandoVerde{
   background-color: var(--cor-game-verde);
@@ -129,17 +129,27 @@
     -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
 }
 
+.cardPiscandoVerde:active{
+  background-color: var(--cor-game-verde);
+  opacity: 0.6;
+  cursor: pointer;   
+  box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+}
+
 .main--top-rigth{
     background-color: var(--cor-game-vermelho);
     border-top-right-radius: 100%;
     opacity: 0.6;
     cursor: pointer;    
 }
-.main--top-rigth:hover{
-    opacity: 1;
-    box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-    -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-    -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+.cardPiscandoVermelho:active{
+  opacity: 0.6;
+  cursor: pointer;   
+  box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
 }
 
 .cardPiscandoVermelho{
@@ -159,11 +169,12 @@
     cursor: pointer;    
 }
 
-.main--bottom-rigth:hover{
-    opacity: 1;    
-    box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-    -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-    -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+.cardPiscandoAzul:active{
+  opacity: 0.6;
+  cursor: pointer;   
+  box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
+  -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
 }
 
 .cardPiscandoAzul{
@@ -180,12 +191,12 @@
   opacity: 0.6;
   cursor: pointer;    
 }
-.main--bottom-left:hover{
-  opacity: 1;
+.cardPiscandoAmarelo:active{
+  opacity: 0.6;
+  cursor: pointer;   
   box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
   -webkit-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
   -moz-box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
-
 }
 
 .cardPiscandoAmarelo{

@@ -129,9 +129,11 @@ botaoAzul.addEventListener('click', addCoresJogadorAzul)
 let botaoAmarelo = document.getElementById('amarelo')
 botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
+let displayCentro = document.getElementById('displayCentro')
+
 //----------------SEQUENCIA DE CORES----------------//
 const cores = ['verde', 'vermelho', 'azul', 'amarelo']
-let sequenciaMaquina = ['verde', 'azul','vermelho', 'amarelo']
+let sequenciaMaquina = []
 let sequenciaJogador = []
 
 
@@ -142,41 +144,29 @@ sequenciaMaquina.push(cores[random])
 
 }
 
-0
-
-
-
-
-// function blink(){
-// botaoVerde.classList.add('cardPiscandoVerde')
-// setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
-
-// }
-
-///verifica qual luz deve piscar
 function piscar(){
 
     for(let i = 0; i<sequenciaMaquina.length; i++){
 
-        if(sequenciaMaquina[i].includes('verde')){
+        setTimeout(() => {  if(sequenciaMaquina[i] === 'verde'){
             botaoVerde.classList.add('cardPiscandoVerde')
-            setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000*i)
-        }
+             setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 750)
+         }}, 1500*i)
 
         setTimeout(() => {  if(sequenciaMaquina[i].includes('vermelho')){
             botaoVermelho.classList.add('cardPiscandoVermelho')
-             setTimeout(function () {botaoVermelho.classList.remove('cardPiscandoVermelho')}, 1000)
-         }}, 1000*i)
+             setTimeout(function () {botaoVermelho.classList.remove('cardPiscandoVermelho')}, 750)
+         }}, 1500*i)
         
         setTimeout(() => {  if(sequenciaMaquina[i].includes('azul')){
             botaoAzul.classList.add('cardPiscandoAzul')
-             setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 1000)
-         }}, 1000*i)
+             setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 750)
+         }}, 1500*i)
             
         setTimeout(() => {  if(sequenciaMaquina[i].includes('amarelo')){
             botaoAmarelo.classList.add('cardPiscandoAmarelo')
-             setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 1000)
-         }}, 1000*i)
+             setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 750)
+         }}, 1500*i)
     }
 }
 
@@ -186,60 +176,58 @@ function piscar(){
 ///add ao array do jogador
 function addCoresJogadorVerde(){
     sequenciaJogador.push('verde')
+    botaoVerde.classList.add('cardPiscandoVerde')
+    setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
+
 }
 function addCoresJogadorVermelho(){
     sequenciaJogador.push('vermelho')
+    botaoVermelho.classList.add('cardPiscandoVermelho')
+    setTimeout(function () {botaoVermelho.classList.remove('cardPiscandoVermelho')}, 1000)
 }
 function addCoresJogadorAzul(){
     sequenciaJogador.push('azul')
+    botaoAzul.classList.add('cardPiscandoAzul')
+    setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 1000)
 }
 function addCoresJogadorAmarelo(){
     sequenciaJogador.push('amarelo')
+    botaoAmarelo.classList.add('cardPiscandoAmarelo')
+    setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 1000)
 }
+
+
 
 
 ///verifica os arrays///
 const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+let nivel = 0
 
 function verificar(){
 if(equals(sequenciaJogador,sequenciaMaquina) === true){
-    console.log('Voce acertou!')
+    displayCentro.innerText = "Você acertou!"
+    nivel++
+    
 }else{
-    console.log('Errou!')
+    displayCentro.innerText = "Errou!" 
+    nivel = 0
 }
 }
 
 ////LOGICA JOGO////
 
 function iniciar(){
+    sequenciaJogador = []
     addCores()
     piscar()
     // resposta usuário
-    setTimeout(verificar, 10000)
+    setTimeout(verificar, 4000*sequenciaMaquina.length)
     sequenciaJogador = []
 }
 
 
 ////botao iniciar///
-let botaoStart = document.getElementById('iniciar')
+let botaoProxima = document.getElementsByClassName('main--button-next')
 
-let botaoTeste = document.getElementById('teste')
-botaoTeste.addEventListener('click', iniciar)
-
-
-
-
-
-
-
-
-
-
-
-//----------------DISPLAY RODADA----------------//
-
-// const rodadaJogador =() =>{
-
-//     let contadora = 0;
-
-//     genius.nivelJogador = contadora;}
+// let botaoTeste = document.getElementById('teste')
+// botaoTeste.addEventListener('click', iniciar)
