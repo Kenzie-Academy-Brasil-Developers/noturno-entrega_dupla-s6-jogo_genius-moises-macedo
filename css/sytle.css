@@ -33,7 +33,7 @@
 .main--container{
     display: flex;
     
-    height: 500px;
+    height: 520px;
     width: 100%;
     max-width: 330px;
     align-items: center;
@@ -213,7 +213,7 @@
     text-transform: uppercase;  
     overflow: hidden;  
     transition: 0.2s;  
-    margin-top: 40px;  
+    margin-top: 40px;
     letter-spacing: 4px;
     font-family: var(--fonte-corpo);
     cursor: pointer;    
@@ -682,8 +682,19 @@
   transition:  opacity 0.3s
 
 
+}
 
+.button-next{  
+  margin-top:1px;
+  display: none;
 
+  
+}
+.button-restart{  
+  margin-top:15px;
+  display: none;
+
+  
 }
 
 

@@ -16,7 +16,13 @@ const genius = {
 const containerModal = document.querySelector('.container--modal');
 
 genius.buttonIniciar.addEventListener('click', function (){
-    containerModal.classList.add('container--modal-opacity')
+    containerModal.classList.add('container--modal-opacity');
+    genius.buttonIniciar.style.display = 'none';
+    document.querySelector('.button-next').style.display ='block';
+    document.querySelector('.button-restart').style.display ='block';
+
+    
+
 
 })
 
@@ -103,13 +109,9 @@ document.addEventListener('click', function(e){
     const el = e.target;
 
     
-    if(el === genius.displayComputador){
+    if(el.classList.contains('button-restart')){
 
-        console.log('clique')
-
-
-        
-
+        location.reload();
 
     }
 
