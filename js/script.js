@@ -131,7 +131,7 @@ botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
 //----------------SEQUENCIA DE CORES----------------//
 const cores = ['verde', 'vermelho', 'azul', 'amarelo']
-let sequenciaMaquina = ['verde', 'amarelo']
+let sequenciaMaquina = ['verde', 'vermelho', 'azul', 'amarelo']
 let sequenciaJogador = []
 
 
@@ -142,12 +142,7 @@ sequenciaMaquina.push(cores[random])
 
 
 
-////LOGICA JOGO////
 
-function iniciar(){
-    addCores()
-
-}
 
 
 // function blink(){
@@ -158,22 +153,32 @@ function iniciar(){
 
 ///verifica qual luz deve piscar
 function piscar(){
+
     for(let i = 0; i<sequenciaMaquina.length; i++){
+
         if(sequenciaMaquina[i].includes('verde')){
-                botaoVerde.classList.add('cardPiscandoVerde')
-                setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
+            botaoVerde.classList.add('cardPiscandoVerde')
+            setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
         }
+
         else if(sequenciaMaquina[i].includes('vermelho')){
-            botaoVermelho.classList.add('cardPiscandoVermelho')
-            setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVermelho')}, 1000)
+            setTimeout(() => {  botaoVermelho.classList.add('cardPiscandoVermelho')
+            setTimeout(function () {botaoVermelho.classList.remove('cardPiscandoVermelho')}, 1000)
+         }, 1000)
+            
         }
+        
         else if(sequenciaMaquina[i].includes('azul')){
-            botaoAzul.classList.add('cardPiscandoAzul')
+            setTimeout(() => {  botaoAzul.classList.add('cardPiscandoAzul')
             setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 1000)
+         }, 2000)
+            
         }
         else if(sequenciaMaquina[i].includes('amarelo')){
-            botaoAmarelo.classList.add('cardPiscandoAmarelo')
+            setTimeout(() => { botaoAmarelo.classList.add('cardPiscandoAmarelo')
             setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 1000)
+         }, 3000)
+            
         }
     }
 }
@@ -185,29 +190,60 @@ function piscar(){
 function addCoresJogadorVerde(){
     sequenciaJogador.push('verde')
 }
-
 function addCoresJogadorVermelho(){
     sequenciaJogador.push('vermelho')
 }
-
 function addCoresJogadorAzul(){
     sequenciaJogador.push('azul')
-
 }
-
 function addCoresJogadorAmarelo(){
     sequenciaJogador.push('amarelo')
 }
 
 
 ///verifica os arrays///
+const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
 function verificar(){
-if(sequenciaJogador === sequenciaMaquina){
+if(equals(sequenciaJogador,sequenciaMaquina) === true){
     console.log('Voce acertou!')
 }else{
     console.log('Errou!')
 }
 }
+
+////LOGICA JOGO////
+
+function iniciar(){
+    addCores()
+    piscar()
+    // resposta usuário
+    setTimeout(verificar, 10000)
+    sequenciaJogador = []
+
+    // for(let i = 0; (sequenciaJogador === sequenciaMaquina) == true; i++) {
+
+    //     if(sequenciaJogador === sequenciaMaquina){
+    //         console.log('Voce acertou!')
+    //         addCores()
+    //         piscar()
+    //     }else{
+    //         console.log('Errou!')
+    //     }
+    // } 
+
+    
+}
+
+
+////botao iniciar///
+let botaoStart = document.getElementById('iniciar')
+
+let botaoTeste = document.getElementById('teste')
+botaoTeste.addEventListener('click', iniciar)
+
+
+
 
 
 
