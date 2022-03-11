@@ -133,8 +133,8 @@ botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
 let displayCentro = document.getElementById('displayCentro')
 
-let displayNivel = document.getElementsByClassName('main--player-counter')
-let botaoEnviar = document.getElementsByClassName("modal--button fechar")
+let displayNivel = document.querySelector('.main--player-counter')
+let botaoEnviar = document.querySelector(".modal--button")
 
 
 //----------------SEQUENCIA DE CORES----------------//
@@ -227,7 +227,7 @@ if(equals(sequenciaJogador,sequenciaMaquina) === true){
 function iniciar(){
     sequenciaJogador = []
     addCores()
-    piscar()
+    setTimeout(piscar(), 4000)
     // resposta usuário
     setTimeout(verificar, 4000*sequenciaMaquina.length)
     sequenciaJogador = []
