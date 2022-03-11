@@ -131,6 +131,10 @@ botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
 let displayCentro = document.getElementById('displayCentro')
 
+let displayNivel = document.getElementsByClassName('main--player-counter')
+let botaoEnviar = document.getElementsByClassName("modal--button fechar")
+
+
 //----------------SEQUENCIA DE CORES----------------//
 const cores = ['verde', 'vermelho', 'azul', 'amarelo']
 let sequenciaMaquina = []
@@ -203,10 +207,12 @@ function addCoresJogadorAmarelo(){
 const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 let nivel = 0
 
+
 function verificar(){
 if(equals(sequenciaJogador,sequenciaMaquina) === true){
     displayCentro.innerText = "Você acertou!"
     nivel++
+    displayNivel.innerText = nivel
     
 }else{
     displayCentro.innerText = "Errou!" 
@@ -226,8 +232,9 @@ function iniciar(){
 }
 
 
-////botao iniciar///
-let botaoProxima = document.getElementsByClassName('main--button-next')
+////botao para iniciar a função///
+
+botaoEnviar.addEventListener('click', iniciar)
+
 
 // let botaoTeste = document.getElementById('teste')
-// botaoTeste.addEventListener('click', iniciar)
