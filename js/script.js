@@ -131,7 +131,7 @@ botaoAmarelo.addEventListener('click', addCoresJogadorAmarelo)
 
 //----------------SEQUENCIA DE CORES----------------//
 const cores = ['verde', 'vermelho', 'azul', 'amarelo']
-let sequenciaMaquina = ['verde']
+let sequenciaMaquina = ['verde', 'amarelo']
 let sequenciaJogador = []
 
 
@@ -149,24 +149,31 @@ function iniciar(){
 
 }
 
+
+// function blink(){
+// botaoVerde.classList.add('cardPiscandoVerde')
+// setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
+
+// }
+
 ///verifica qual luz deve piscar
 function piscar(){
     for(let i = 0; i<sequenciaMaquina.length; i++){
         if(sequenciaMaquina[i].includes('verde')){
-            setInterval(function () {botaoVerde.add.classList('cardPiscandoVerde')}, 700)
-            // botaoVerde.remove.classList('cardPiscandoVerde')
+                botaoVerde.classList.add('cardPiscandoVerde')
+                setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVerde')}, 1000)
         }
         else if(sequenciaMaquina[i].includes('vermelho')){
-            setInterval(function () {botaoVermelho.add.classList(cardPiscandoVermelho)}, 700)
-            botaoVermelho.remove.classList(cardPiscandoVermelho)
+            botaoVermelho.classList.add('cardPiscandoVermelho')
+            setTimeout(function () {botaoVerde.classList.remove('cardPiscandoVermelho')}, 1000)
         }
         else if(sequenciaMaquina[i].includes('azul')){
-            setInterval(function () {botaoAzul.add.classList(cardPiscandoAzul)}, 700)
-            botaoAzul.remove.classList(cardPiscandoAzul)
+            botaoAzul.classList.add('cardPiscandoAzul')
+            setTimeout(function () {botaoAzul.classList.remove('cardPiscandoAzul')}, 1000)
         }
         else if(sequenciaMaquina[i].includes('amarelo')){
-            setInterval(function () {botaoAmarelo.add.classList(cardPiscandoAmarelo)}, 700)
-            botaoAmarelo.remove.classList(cardPiscandoAmarelo)
+            botaoAmarelo.classList.add('cardPiscandoAmarelo')
+            setTimeout(function () {botaoAmarelo.classList.remove('cardPiscandoAmarelo')}, 1000)
         }
     }
 }
@@ -200,14 +207,9 @@ if(sequenciaJogador === sequenciaMaquina){
 }else{
     console.log('Errou!')
 }
-
 }
 
 
-
-
-// let botaoIniciar = document.getElementById('iniciar')
-// botaoIniciar.addEventListener('click', ) 
 
 
 

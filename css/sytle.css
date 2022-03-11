@@ -122,7 +122,6 @@
 
 .cardPiscandoVerde{
   background-color: var(--cor-game-verde);
-    border-top-right-radius: 100%;
     opacity: 1;
     cursor: pointer;   
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
@@ -145,7 +144,6 @@
 
 .cardPiscandoVermelho{
   background-color: var(--cor-game-vermelho);
-    border-top-right-radius: 100%;
     opacity: 1;
     cursor: pointer;   
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
@@ -170,7 +168,6 @@
 
 .cardPiscandoAzul{
   background-color: var(--cor-game-Azul);
-    border-top-right-radius: 100%;
     opacity: 1;
     cursor: pointer;   
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
@@ -194,7 +191,6 @@
 
 .cardPiscandoAmarelo{
   background-color: var(--cor-game-amarelho);
-    border-top-right-radius: 100%;
     opacity: 1;
     cursor: pointer;   
     box-shadow: -1px 0px 37px 17px rgba(255,255,255,0.75);
